@@ -1,0 +1,590 @@
+// # SHORT HOWTO
+// ## Sprites
+//     .whatever
+//          +sized-sprite($icons, coderiver) //or
+// 			+s(codedby) //gets default value for spritemap as $icons
+// ### animation example
+//     +include keyframes(rotate)
+//        from
+//           +rotate(0)
+//        to
+//           +rotate(360)
+// ## animation usage
+//     body:hover
+// 	    +animation(rotate 200s linear infinite)
+// ## animations easing, see easings.net for full list and examples, tnx @ai
+//     transition: all 1.2s ceaser($ease-in)
+// ## gradient example
+//     +background-image(linear-gradient(#232323, #5c5c5c));
+//     +g(#232323, #5c5c5c);
+//	   horizontal
+//     +gh(#232323, #5c5c5c);
+// ## making bw-images
+//     img
+//			@extend %gray
+// ## predefined media-queries: https://github.com/paranoida/sass-mediaqueries
+//     +min-screen(320)
+//			display: none
+// +max-screen(1000), +iphone5, +iphone4, +ipad-retina, +ipad, +hdpi - also available
+//
+// ## use cycles
+//     @for $i from 1 through 3
+//       .item-#{$i}
+//			width: 2em * $i;
+//     @each $s in a,b,c
+// 	    	#{$s}
+//				display: none
+// ## fonts 
+// Save fonts to /css/fonts, after that write (eot, woff, ttf):
+// +font(book, cytiapro-black-webfont)  
+// =book
+// 	font-family: "book", Arial, sans-serif 
+// insert pics into css
+// div
+// 	+pic("blabla.png")
+// span
+// 	+png(blabla)
+// p
+// 	+jpg(bla)
+
++font(helveticaneue-roman, helveticaneuecyr-roman-webfont)  
+=hr
+	font-family: "helveticaneue-roman", Arial, sans-serif 
+
++font(helveticaneue-bold, helveticaneuecyr-bold-webfont)  
+=hb
+	font-family: "helveticaneue-bold", Arial, sans-serif 
+
++font(helveticaneue-light, helveticaneuecyr-light-webfont)  
+=hl
+	font-family: "helveticaneue-light", Arial, sans-serif 
+
++font(helveticaneue-medium, helveticaneuecyr-medium-webfont)  
+=hm
+	font-family: "helveticaneue-medium", Arial, sans-serif 
+
+
+body 
+	color: #646464
+	font-size: 14px 
+	line-height: 1.4
+	+hl
+
+// common blocks      
+
+//out
+.out
+	min-height: 100%
+	height: auto !important
+	height: 100%
+	margin: 0 auto -153px
+	&.out_main
+		background: url('../img/bg-out.png') repeat-x 0 837px
+		.header
+			padding: 40px 0
+		.header__logo
+			+s(logo)
+		.menu
+			+box-shadow(none)
+
+//container
+.container
+	margin: 0 auto
+	padding: 0px 23px
+	width: 1024px
+	+box
+	.container__in
+		position: relative
+		padding: 84px 24px 70px
+
+.header
+	padding: 14px
+	text-align: center
+	background: #fcfcfc
+	+g(#f3f3f3, #fcfcfc)
+	+box-shadow(inset 0 -6px 20px rgba(0,0,0,.09))
+	+box
+	.header__logo
+		display: inline-block
+		+s(logo2)
+	.header__text
+		margin-top: 33px
+		width: 465px
+		font-size: 28px
+		color: #828388
+		display: inline-block
+		+hb
+
+//menu
+.menu
+	border: 1px solid rgba(149,149,149,0)
+	background-color: #fff
+	+box-shadow(0 4px 6px rgba(0,0,0,.09))
+	+box
+	.menu__in
+		margin: 0 auto
+		width: 982px
+		+clr
+	.menu__top
+		padding-top: 14px
+		height: 57px
+		+box
+		+clr
+	.menu__list
+		float: right
+		margin-top: 2px
+		font-size: 0
+		text-align: right
+		li
+			margin-left: 20px
+			display: inline-block
+			&:first-child
+				margin-left: 0
+		a
+			padding: 4px 6px
+			font-size: 18px
+			color: #828388
+			text-decoration: none
+			+transition(all 0.2s linear)
+			&:hover
+				color: #fff
+				background: #e83724
+	.menu__nav
+		height: 44px
+		line-height: 44px
+		font-size: 0
+		text-align: center
+		border-top: 1px solid #eaeaea
+		li
+			margin-left: 15px
+			display: inline-block
+			&:first-child
+				margin-left: 0
+		a
+			color: #67686c
+			font-size: 14px
+			text-decoration: none
+			&:hover
+				color: #e83724
+
+//ico
+.ico
+	display: inline-block
+	&.ico_car
+		+s(car)
+	&.ico_eyes
+		+s(eyes)
+	&.ico_protection
+		+s(protection)
+	&.ico_mail
+		+s(mail)
+	&.ico_phone
+		+s(phone)
+	&.ico_people
+		+s(people)
+	&.ico_vk
+		+s(vk)
+	&.ico_f
+		+s(f)
+	&.ico_you 
+		+s(youtybe)
+
+//office
+.office
+	float: right
+	width: 210px
+	text-align: right
+	.office__btn
+		padding: 0 10px
+		height: 28px
+		line-height: 26px
+		font-size: 12px
+		color: #505052
+		border: 1px solid #7d7e82
+		background: none
+		+transition(all 0.2s linear)
+		+box
+		&:hover
+			color: #fff
+			border-color: #fff
+			background: #e83724
+
+//specialization
+.specialization
+	position: relative
+	.specialization__bottom
+		position: absolute
+		left: 0
+		bottom: 16px
+		width: 100%
+		height: 22px
+		text-align: center
+		z-index: 200
+	.specialization__pager
+		display: inline-block
+		height: 22px
+		line-height: 22px
+		z-index: 4
+		button
+			position: relative
+			margin-left: 12px
+			height: 14px
+			width: 14px
+			background: #fff
+			border-radius: 50%
+			display: inline-block
+			vertical-align: middle
+			+box
+			// +box
+			&:before
+				position: absolute
+				content: ''
+				top: -4px
+				left: -4px
+				height: 22px
+				width: 22px
+				z-index: -1
+				border-radius: 50%
+				background: #e83724
+			&:after
+				position: absolute
+				content: ''
+				top: -4px
+				right: 50%
+				height: 22px
+				width: 25px
+				z-index: -2
+				background: #e83724
+			&:first-child
+				margin-left: 0
+				&:after
+					display: none
+			&.cycle-pager-active
+				height: 15px
+				width: 15px
+				border: 2px solid #4e4e4e
+				&:before,
+				&:after
+					display: none
+			&.cycle-pager-active + button
+				&:after
+					display: none
+
+	.specialization__item
+		height: 660px
+		width: 100%
+	.specialization__img
+		height: 450px
+		width: 100%
+		background-size: cover !important
+	.specialization__wrap
+		position: absolute
+		left: 50%
+		bottom: 0
+		margin-left: -503px
+		padding-bottom: 60px
+		width: 1006px
+		text-align: center
+		font-size: 0
+		z-index: 200
+		border-bottom: 1px solid #dadada
+		+box
+	.specialization__block
+		position: relative
+		margin-left: 25px
+		padding-top: 165px
+		height: 307px
+		width: 307px
+		font-size: 14px
+		text-align: center
+		text-decoration: none
+		color: #646464
+		border-radius: 50%
+		background: #fff
+		background: rgba(#fff, 0.9)
+		display: inline-block
+		+transition(all 0.2s linear)
+		+box
+		&:hover
+			color: #fff
+			background: #e8220c
+			background: rgba(#e8220c, 0.8)
+			.specialization__title
+				color: #fff
+			.ico_car	
+				+s(car-hov)
+			.ico_eyes	
+				+s(eyes-hov)
+			.ico_protection	
+				+s(protection-hov)
+		&:first-child
+			margin-left: 0
+	.ico
+		position: absolute
+		left: 50%
+		&.ico_car
+			top: 53px
+			margin-left: -56px
+		&.ico_eyes
+			top: 40px
+			margin-left: -64px
+		&.ico_protection
+			top: 38px
+			margin-left: -51px
+	.specialization__title
+		color: #2a2a2a
+		font-size: 24px
+	.specialization__text
+		width: 210px
+		padding-top: 12px
+		display: inline-block
+
+//slider
+.slider
+	.slider__item
+		width: 100%
+		height: 360px
+		+clr
+	.slider__pager
+		text-align: center
+		font-size: 0
+		button
+			margin-left: 11px
+			height: 14px
+			width: 14px
+			border: 2px solid #4e4e4e
+			+border-radius(50%)
+			background: none
+			display: inline-block
+			+box
+			&:first-child
+				margin-left: 0
+			&.cycle-pager-active
+				background: #4e4e4e
+	.slider__img
+		float: left
+		margin: 0 25px 0 40px
+		height: 295px
+		line-height: 291px
+		text-align: center
+		overflow: hidden
+		border: 3px solid #fff
+		border-radius: 50%
+		+box-shadow(0 0 0 1px #f7f7f7)
+		span
+			vertical-align: middle
+			display: inline-block
+		img
+			display: block
+	.slider__text
+		float: left
+		width: 510px
+		p
+			margin-top: 10px
+	.slider__title
+		margin-bottom: 25px
+		color: #2a2a2a
+		font-size: 30px
+		+hr
+.slider__prev, .slider__next
+	position: absolute
+	top: 40%
+	z-index: 200
+	+s(prev-arr)
+	&:hover
+		+s(hov-arr)
+.slider__prev
+	left: -27px
+.slider__next
+	right: -27px
+	+rotate(180)
+
+//about
+.about
+	padding: 64px 0 120px
+	text-align: center
+	background: #f6f6f6
+	+g(#f7f7f7, #f2f2f2)
+	.about__title
+		font-size: 30px
+		color: #2a2a2a
+		text-transform: uppercase
+		+hm
+	.about__info	
+		padding: 45px 70px 0
+	.about__block
+		position: relative
+		margin-left: 30px
+		padding-top: 30px
+		width: 272px
+		height: 209px
+		color: #2a2a2a
+		text-align: center
+		vertical-align: top
+		border: 1px solid rgba(170,170,170,.8)
+		background-color: #fff
+		+box-shadow(0 7px 0 rgba(0,0,0,.1))
+		display: inline-block
+		+box
+		&:first-child
+			margin-left: 0
+		&.about__block_red
+			color: #e83724
+			.about__ico
+				background: #e83724
+		&.about__block_mail
+			.ico
+				top: 0
+				left: 0
+			a
+				text-decoration: none
+				text-transform: none
+				&:hover
+					text-decoration: underline
+		&.about__block_people
+			.about__ico
+				margin-bottom: 33px
+	.about__wrap
+		margin-top: 60px
+	.about__ico
+		position: relative
+		margin-bottom: 22px
+		height: 82px
+		width: 82px
+		+border-radius(50%)
+		background: #525252
+		display: inline-block
+	.ico
+		position: absolute
+		left: 50%
+		top: 50%
+		&.ico_people
+			margin: -24px 0 0 -22px
+		&.ico_phone
+			margin: -23px 0 0 -23px
+	.about__text
+		font-size: 16px
+		+hr
+	a, .about__feedback
+		text-transform: uppercase
+		color: #2a2a2a
+		text-decoration: underline
+		background: none
+		display: inline-block
+		&:hover
+			text-decoration: none
+
+.equipment
+	padding-top: 50px
+	.equipment__title
+		padding-left: 20px
+		font-size: 40px
+		color: #454545
+		+hb
+	.equipment__title-2, .equipment__title-3
+		color: #ef4823
+		line-height: 1
+	.equipment__title-2
+		margin-bottom: 20px
+		font-size: 30px
+	.equipment__title-3
+		margin-top: 30px
+		font-size: 18px
+	.equipment__row
+		padding: 64px 0 54px
+		border-bottom: 1px solid #eaeaea
+		+clr
+		&.equipment__row_last
+			margin-bottom: 63px
+	.equipment__left
+		float: left
+		width: 328px
+		text-align: center
+	.equipment__img
+		padding-top: 5px
+		display: inline-block
+		img
+			display: block
+	.equipment__right
+		overflow: hidden
+	.equipment__text
+		padding-right: 200px
+		color: #252525
+		line-height: 1.2
+		p
+			margin-bottom: 8px
+		ul
+			padding: 30px 0 0 25px
+			li
+				margin-bottom: 10px
+				list-style-type: disc
+			
+
+
+
+//footer
+.footer, .push
+	height: 153px
+.footer
+	font-size: 12px
+	color: #9a9a9a
+	background: #3b3b3d
+	.footer__top
+		padding: 30px 0
+		text-align: center
+		border-bottom: 1px solid #313131
+	.footer__nav
+		font-size: 0
+		display: inline-block
+		li
+			margin-left: 25px
+			display: inline-block
+		a
+			font-size: 16px
+			color: #c4c4c4
+			text-decoration: none
+			&:hover
+				text-decoration: underline
+	.container
+		position: relative
+		padding: 0 32px
+		height: 70px
+		line-height: 70px
+		text-align: center
+		+hr
+		+clr
+	.copyright
+		float: left
+		width: 250px
+		span
+			text-transform: uppercase
+	.soc
+		font-size: 0
+		line-height: 1
+		vertical-align: middle
+		display: inline-block
+		li
+			margin-left: 19px
+			display: inline-block
+			&:first-child
+				margin-left: 0
+		.ico
+			+transition(all 0.2s linear)
+		.ico_vk
+			&:hover
+				+s(vk-hov)
+		.ico_f
+			&:hover
+				+s(f-hov)
+		.ico_you
+			&:hover
+				+s(youtube-hov)
+	.studio
+		float: right
+		width: 170px
+		color: #b3b3b3
+		a
+			color: #b3b3b3
+			text-decoration: underline
+			&:hover
+				text-decoration: none
