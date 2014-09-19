@@ -77,15 +77,29 @@ body
 	min-height: 100%
 	height: auto !important
 	height: 100%
+	min-width: 1024px
 	margin: 0 auto -153px
-	&.out_main
-		background: url('../img/bg-out.png') repeat-x 0 837px
-		.header
-			padding: 40px 0
-		.header__logo
-			+s(logo)
-		.menu
-			+box-shadow(none)
+
+//main
+.main
+	padding-top: 332px
+	.header
+		position: fixed
+		top: 0
+		padding: 0
+		width: 100%
+		height: 332px
+	.header__logo_main
+		display: inline-block
+		font-size: 0
+		img
+			width: 100%
+	.menu
+		position: absolute
+		left: 0
+		width: 100%
+		bottom: -59px
+
 
 //container
 .container
@@ -100,6 +114,7 @@ body
 .header
 	padding: 14px
 	text-align: center
+	z-index: 400
 	background: #fcfcfc
 	+g(#f3f3f3, #fcfcfc)
 	+box-shadow(inset 0 -6px 20px rgba(0,0,0,.09))
@@ -110,7 +125,7 @@ body
 	.header__text
 		margin-top: 33px
 		width: 465px
-		font-size: 28px
+		font-size: 2em
 		color: #828388
 		display: inline-block
 		+hb
@@ -212,6 +227,13 @@ body
 //specialization
 .specialization
 	position: relative
+	.specialization__bg
+		position: absolute
+		left: 0
+		bottom: 0
+		width: 100%
+		height: 212px
+		background: url('../img/bg-out.png') repeat-x 0 10% 
 	.specialization__bottom
 		position: absolute
 		left: 0
@@ -219,23 +241,33 @@ body
 		width: 100%
 		height: 22px
 		text-align: center
-		z-index: 200
+		z-index: 300
 	.specialization__pager
 		display: inline-block
 		height: 22px
 		line-height: 22px
 		z-index: 4
-		button
+		.specialization__btn
 			position: relative
 			margin-left: 12px
 			height: 14px
 			width: 14px
 			background: #fff
 			border-radius: 50%
+			cursor: pointer
 			display: inline-block
 			vertical-align: middle
+			+transition(all 0.2s linear)
 			+box
-			// +box
+			&:hover
+				background: #e83724
+				&:after
+					display: none
+				&:before
+					display: none
+				& + .specialization__btn
+					&:after
+						display: none
 			&:before
 				position: absolute
 				content: ''
@@ -263,62 +295,81 @@ body
 				height: 15px
 				width: 15px
 				border: 2px solid #4e4e4e
+				background: #fff
 				&:before,
 				&:after
 					display: none
-			&.cycle-pager-active + button
+			&.cycle-pager-active + .specialization__btn
 				&:after
 					display: none
+		&.specialization__wrap
+			.specialization__btn
+				display: none
+				&:before,
+				&:after
+					display: none
+			.specialization__block
+				position: relative
+				margin-left: 25px
+				padding-top: 165px
+				height: 307px
+				width: 307px
+				font-size: 14px
+				text-align: center
+				text-decoration: none
+				color: #646464
+				border-radius: 50%
+				background: #fff
+				background: rgba(#fff, 0.9)
+				display: inline-block
+				border: none
+				cursor: default
+				+transition(all 0.2s linear)
+				+box
+				&.cycle-pager-active
+					color: #fff
+					background: #e8220c
+					background: rgba(#e8220c, 0.8)
+					.specialization__title
+						color: #fff
+					.ico_car	
+						+s(car-hov)
+					.ico_eyes	
+						+s(eyes-hov)
+					.ico_protection	
+						+s(protection-hov)
+				// &:first-child
+				// 	margin-left: 0
 
 	.specialization__item
-		height: 660px
+		padding-bottom: 212px
+		min-height: 660px
 		width: 100%
+		+box
 	.specialization__img
-		height: 450px
 		width: 100%
+		min-height: 450px
+		max-height: 565px
 		background-size: cover !important
+		img
+			position: relative
+			width: 100%
+			opacity: 0
+			z-index: -20
+			display: block
 	.specialization__wrap
 		position: absolute
 		left: 50%
 		bottom: 0
 		margin-left: -503px
 		padding-bottom: 60px
+		height: 366px
 		width: 1006px
 		text-align: center
 		font-size: 0
 		z-index: 200
 		border-bottom: 1px solid #dadada
 		+box
-	.specialization__block
-		position: relative
-		margin-left: 25px
-		padding-top: 165px
-		height: 307px
-		width: 307px
-		font-size: 14px
-		text-align: center
-		text-decoration: none
-		color: #646464
-		border-radius: 50%
-		background: #fff
-		background: rgba(#fff, 0.9)
-		display: inline-block
-		+transition(all 0.2s linear)
-		+box
-		&:hover
-			color: #fff
-			background: #e8220c
-			background: rgba(#e8220c, 0.8)
-			.specialization__title
-				color: #fff
-			.ico_car	
-				+s(car-hov)
-			.ico_eyes	
-				+s(eyes-hov)
-			.ico_protection	
-				+s(protection-hov)
-		&:first-child
-			margin-left: 0
 	.ico
 		position: absolute
 		left: 50%
@@ -329,7 +380,7 @@ body
 			top: 40px
 			margin-left: -64px
 		&.ico_protection
-			top: 38px
+			top: 34px
 			margin-left: -51px
 	.specialization__title
 		color: #2a2a2a
@@ -341,6 +392,7 @@ body
 
 //slider
 .slider
+	overflow: hidden
 	.slider__item
 		width: 100%
 		height: 360px
@@ -356,11 +408,16 @@ body
 			+border-radius(50%)
 			background: none
 			display: inline-block
+			+transition(all 0.2s linear)
 			+box
+			&:hover
+				background: #e83724
+				border-color: #e83724
 			&:first-child
 				margin-left: 0
 			&.cycle-pager-active
 				background: #4e4e4e
+				border: 2px solid #4e4e4e
 	.slider__img
 		float: left
 		margin: 0 25px 0 40px

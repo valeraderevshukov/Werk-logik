@@ -9,139 +9,82 @@
 	<!--[if IE]><script src="js/html5shiv.js"></script><![endif]-->
 	<script src="js/lib/jquery.js"></script>
 	<script src="js/lib/cycle.js"></script>
+	<script src="js/common.js"></script>
 </head>
-<body>
+<body class="main">
 <!-- BEGIN  out-->
-<div class="out out_main">
+<div class="out">
 	<!-- BEGIN header -->
-	<header class="header">
-		<a href="#" class="header__logo logo"></a>
+	<header class="header" id="js-header">
+		<a href="#" class="header__logo_main" id="js-logo"><img src="img/logo.png" alt="logo"></a>
 		<div class="header__bottom">
-			<div class="header__text">ИНТЕЛЛЕКТУАЛЬНАЯ СИСТЕМА КОНТРОЛЯ ПОМЕЩЕНИЙ</div>
+			<div class="header__text" id="js-header-text">ИНТЕЛЛЕКТУАЛЬНАЯ СИСТЕМА КОНТРОЛЯ ПОМЕЩЕНИЙ</div>
 		</div>
-	</header>
-	<!-- END header -->
-	<!-- BEGIN menu -->
-	<div class="menu">
-		<div class="menu__in">
-			<div class="menu__top">
-				<div class="menu__office office">
-					<button class="office__btn">Личный кабинет</button>
+		<!-- BEGIN menu -->
+		<div class="menu">
+			<div class="menu__in">
+				<div class="menu__top">
+					<div class="menu__office office">
+						<button class="office__btn">Личный кабинет</button>
+					</div>
+					<ul class="menu__list">
+						<li><a href="#">О компании</a></li>
+						<li><a href="#">Оборудование</a></li>
+						<li><a href="#">Услуги</a></li>
+						<li><a href="#">Партнерам</a></li>
+						<li><a href="#">Контакты</a></li>
+					</ul>
 				</div>
-				<ul class="menu__list">
-					<li><a href="#">О компании</a></li>
-					<li><a href="#">Оборудование</a></li>
-					<li><a href="#">Услуги</a></li>
-					<li><a href="#">Партнерам</a></li>
-					<li><a href="#">Контакты</a></li>
-				</ul>
 			</div>
 		</div>
-	</div>
-	<!-- END menu -->
+		<!-- END menu -->
+	</header>
+	<!-- END header -->
+	
 	<!-- BEGIN specialization -->
 	<div class="specialization cycle-slideshow"
 		data-cycle-fx="fade"
-		data-cycle-timeout="1500"
+		data-cycle-timeout="0"
 		data-cycle-slides=".specialization__item"
 		data-cycle-pause-on-hover="true"
 		data-cycle-pager=".specialization__pager"
-		data-cycle-pager-template="<button></button>"
+		data-cycle-pager-template="<div class='specialization__btn'></div>"
 		>
 		<div class="specialization__item">
-			<div class="specialization__img" style="background: url(img/img1.png) no-repeat 50% 0;"></div>
-			<div class="specialization__wrap">
-				<a href="#" class="specialization__block">
-					<i class="ico ico_car"></i>
-					<h3 class="specialization__title">Доступ к авто</h3>
-					<div class="specialization__text">Все что нужно, чтобы все было под контролем </div>
-				</a>
-				<a href="#" class="specialization__block">
-					<i class="ico ico_eyes"></i>
-					<h3 class="specialization__title">Контроль помещений</h3>
-					<div class="specialization__text">Все что нужно, чтобы все было под контролем </div>
-				</a>
-				<a href="#" class="specialization__block">
-					<i class="ico ico_protection"></i>
-					<h3 class="specialization__title">Защита от протечек</h3>
-					<div class="specialization__text">Специальные условия для Дилееров и поставщиков</div>
-				</a>
-				
-				<p>При касании водителем ручки двери, индуктивный датчик срабатывает и передает информацию в блок управления. Блок в свою очередь через антенны передает сигнал на электронный ключ (транспондер), который распознает свое положение относительно автомобиля. </p>
-				<p>В данном случае ключ находится вне автомобиля. На основании данного решения передается соответствующий сигнал на приемную антенну центрального замка и противоугонной сигнализации. Сигнализация отключается, а центральный замок разблокирует нужную дверь. Водитель открывает дверь и размещается в автомобиле.</p>
+			<div class="specialization__img" style="background: url(img/img1.png) no-repeat 50% 0;">
+				<img src="http://placehold.it/1280x450" alt="img">
 			</div>
 		</div>
 		<div class="specialization__item">
-			<div class="specialization__img" style="background: url(img/img2.png) no-repeat 50% 0;"></div>
-			<div class="specialization__wrap">
-				<a href="#" class="specialization__block">
-					<i class="ico ico_car"></i>
-					<h3 class="specialization__title">2Доступ к авто</h3>
-					<div class="specialization__text">2Все что нужно, чтобы все было под контролем </div>
-				</a>
-				<a href="#" class="specialization__block">
-					<i class="ico ico_eyes"></i>
-					<h3 class="specialization__title">2Контроль помещений</h3>
-					<div class="specialization__text">2Все что нужно, чтобы все было под контролем </div>
-				</a>
-				<a href="#" class="specialization__block">
-					<i class="ico ico_protection"></i>
-					<h3 class="specialization__title">2Защита от протечек</h3>
-					<div class="specialization__text">2Специальные условия для Дилееров и поставщиков</div>
-				</a>
-				
-				<p>При касании водителем ручки двери, индуктивный датчик срабатывает и передает информацию в блок управления. Блок в свою очередь через антенны передает сигнал на электронный ключ (транспондер), который распознает свое положение относительно автомобиля. </p>
-				<p>В данном случае ключ находится вне автомобиля. На основании данного решения передается соответствующий сигнал на приемную антенну центрального замка и противоугонной сигнализации. Сигнализация отключается, а центральный замок разблокирует нужную дверь. Водитель открывает дверь и размещается в автомобиле.</p>
+			<div class="specialization__img" style="background: url(img/img2.png) no-repeat 50% 0;">
+				<img src="http://placehold.it/1280x450" alt="img">
 			</div>
 		</div>
 		<div class="specialization__item">
-			<div class="specialization__img" style="background: url(img/img1.png) no-repeat 50% 0;"></div>
-			<div class="specialization__wrap">
-				<a href="#" class="specialization__block">
-					<i class="ico ico_car"></i>
-					<h3 class="specialization__title">Доступ к авто</h3>
-					<div class="specialization__text">Все что нужно, чтобы все было под контролем </div>
-				</a>
-				<a href="#" class="specialization__block">
-					<i class="ico ico_eyes"></i>
-					<h3 class="specialization__title">Контроль помещений</h3>
-					<div class="specialization__text">Все что нужно, чтобы все было под контролем </div>
-				</a>
-				<a href="#" class="specialization__block">
-					<i class="ico ico_protection"></i>
-					<h3 class="specialization__title">Защита от протечек</h3>
-					<div class="specialization__text">Специальные условия для Дилееров и поставщиков</div>
-				</a>
-				
-				<p>При касании водителем ручки двери, индуктивный датчик срабатывает и передает информацию в блок управления. Блок в свою очередь через антенны передает сигнал на электронный ключ (транспондер), который распознает свое положение относительно автомобиля. </p>
-				<p>В данном случае ключ находится вне автомобиля. На основании данного решения передается соответствующий сигнал на приемную антенну центрального замка и противоугонной сигнализации. Сигнализация отключается, а центральный замок разблокирует нужную дверь. Водитель открывает дверь и размещается в автомобиле.</p>
+			<div class="specialization__img" style="background: url(img/img1.png) no-repeat 50% 0;">
+				<img src="http://placehold.it/1280x450" alt="img">
 			</div>
 		</div>
-		<div class="specialization__item">
-			<div class="specialization__img" style="background: url(img/img2.png) no-repeat 50% 0;"></div>
-			<div class="specialization__wrap">
-				<a href="#" class="specialization__block">
-					<i class="ico ico_car"></i>
-					<h3 class="specialization__title">2Доступ к авто</h3>
-					<div class="specialization__text">2Все что нужно, чтобы все было под контролем </div>
-				</a>
-				<a href="#" class="specialization__block">
-					<i class="ico ico_eyes"></i>
-					<h3 class="specialization__title">2Контроль помещений</h3>
-					<div class="specialization__text">2Все что нужно, чтобы все было под контролем </div>
-				</a>
-				<a href="#" class="specialization__block">
-					<i class="ico ico_protection"></i>
-					<h3 class="specialization__title">2Защита от протечек</h3>
-					<div class="specialization__text">2Специальные условия для Дилееров и поставщиков</div>
-				</a>
-				
-				<p>При касании водителем ручки двери, индуктивный датчик срабатывает и передает информацию в блок управления. Блок в свою очередь через антенны передает сигнал на электронный ключ (транспондер), который распознает свое положение относительно автомобиля. </p>
-				<p>В данном случае ключ находится вне автомобиля. На основании данного решения передается соответствующий сигнал на приемную антенну центрального замка и противоугонной сигнализации. Сигнализация отключается, а центральный замок разблокирует нужную дверь. Водитель открывает дверь и размещается в автомобиле.</p>
-			</div>
-		</div>
+		<div class="specialization__bg"></div>
 		<div class="specialization__bottom">
 			<div class="specialization__pager"></div>
+		</div>
+		<div class="specialization__pager specialization__wrap">
+			<div class="specialization__block specialization__btn">
+				<i class="ico ico_car"></i>
+				<h3 class="specialization__title">Доступ к авто</h3>
+				<div class="specialization__text">Все что нужно, чтобы все было под контролем </div>
+			</div>
+			<div class="specialization__block specialization__btn">
+				<i class="ico ico_eyes"></i>
+				<h3 class="specialization__title">Контроль помещений</h3>
+				<div class="specialization__text">Все что нужно, чтобы все было под контролем </div>
+			</div>
+			<div class="specialization__block specialization__btn">
+				<i class="ico ico_protection"></i>
+				<h3 class="specialization__title">Защита от протечек</h3>
+				<div class="specialization__text">Специальные условия для Дилееров и поставщиков</div>
+			</div>
 		</div>
 	</div>
 	<!-- END specialization -->
