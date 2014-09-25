@@ -82,7 +82,7 @@ body
 
 //main
 .main
-	padding-top: 332px
+	padding-top: 392px
 	.header
 		position: fixed
 		top: 0
@@ -99,7 +99,6 @@ body
 		left: 0
 		width: 100%
 		bottom: -59px
-
 
 //container
 .container
@@ -129,6 +128,8 @@ body
 		color: #828388
 		display: inline-block
 		+hb
+		&.js-none
+			display: none
 
 //menu
 .menu
@@ -238,16 +239,18 @@ body
 		position: absolute
 		left: 0
 		bottom: 16px
-		width: 100%
+		width: 100% 
 		height: 22px
 		text-align: center
 		z-index: 300
-	.specialization__pager
+	.specialization__pager,
+	.specialization__wrap
 		display: inline-block
 		height: 22px
 		line-height: 22px
+		font-size: 0
 		z-index: 4
-		.specialization__btn
+		.specialization__btn-top
 			position: relative
 			margin-left: 12px
 			height: 14px
@@ -265,7 +268,7 @@ body
 					display: none
 				&:before
 					display: none
-				& + .specialization__btn
+				& + .specialization__btn-top
 					&:after
 						display: none
 			&:before
@@ -299,47 +302,48 @@ body
 				&:before,
 				&:after
 					display: none
-			&.cycle-pager-active + .specialization__btn
+			&.cycle-pager-active + .specialization__btn-top
 				&:after
 					display: none
-		&.specialization__wrap
-			.specialization__btn
+	.specialization__wrap
+		.specialization__btn-top
+			display: none
+			&:before,
+			&:after
 				display: none
-				&:before,
-				&:after
-					display: none
-			.specialization__block
-				position: relative
-				margin-left: 25px
-				padding-top: 165px
-				height: 307px
-				width: 307px
-				font-size: 14px
-				text-align: center
-				text-decoration: none
-				color: #646464
-				border-radius: 50%
-				background: #fff
-				background: rgba(#fff, 0.9)
-				display: inline-block
-				border: none
-				cursor: default
-				+transition(all 0.2s linear)
-				+box
-				&.cycle-pager-active
+		.specialization__block
+			position: relative
+			margin-left: 25px
+			padding-top: 165px
+			height: 307px
+			width: 307px
+			font-size: 14px
+			text-align: center
+			text-decoration: none
+			color: #646464
+			border-radius: 50%
+			cursor: pointer
+			background: #fff
+			background: rgba(#fff, 0.9)
+			display: inline-block
+			border: none
+			+transition(all 0.2s linear)
+			+box
+			&:hover,
+			&.cycle-pager-active
+				color: #fff
+				background: #e8220c
+				background: rgba(#e8220c, 0.8)
+				.specialization__title
 					color: #fff
-					background: #e8220c
-					background: rgba(#e8220c, 0.8)
-					.specialization__title
-						color: #fff
-					.ico_car	
-						+s(car-hov)
-					.ico_eyes	
-						+s(eyes-hov)
-					.ico_protection	
-						+s(protection-hov)
-				// &:first-child
-				// 	margin-left: 0
+				.ico_car	
+					+s(car-hov)
+				.ico_eyes	
+					+s(eyes-hov)
+				.ico_protection	
+					+s(protection-hov)
+			// &:first-child
+			// 	margin-left: 0
 
 	.specialization__item
 		padding-bottom: 212px
