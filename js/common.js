@@ -9,7 +9,6 @@ $(document).ready(function() {
 				// $('.js-header-text').css('margin-top', (33 - (33 / 260) * scrollTop)+'px'); 
 				$('.js-logo').css('margin-top', (40 - (33 / 280) * scrollTop)+'px');
 				$('.js-logo').css('width', (233 - (233 / 540) * scrollTop)+'px');
-			 
 		}
 		calcHeader();
 	};
@@ -35,6 +34,10 @@ $(document).ready(function() {
 		var index = $(this).index();
 		$(".specialization__btn").removeClass('cycle-pager-active');
 		$(".specialization__btn").eq(index).addClass('cycle-pager-active');
-	});	
+	});
+	$(".js-open-nav").click(function(){
+		$(".js-nav").slideToggle();
+		return false;
+	});
 });
 

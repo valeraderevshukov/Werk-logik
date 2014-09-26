@@ -30,17 +30,16 @@ body { color: #646464; font-size: 14px; line-height: 1.4; font-family: "helvetic
 .main .header { position: fixed; top: 0; padding: 0; width: 100%; height: 332px; }
 .main .header__logo_main { display: inline-block; font-size: 0; }
 .main .header__logo_main img { width: 100%; }
-.main .menu { position: absolute; left: 0; width: 100%; bottom: -59px; }
 
 .container { margin: 0 auto; padding: 0px 23px; width: 1024px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 .container .container__in { position: relative; padding: 84px 24px 70px; }
 
-.header { padding: 14px; text-align: center; z-index: 400; background: #fcfcfc; background-image: -moz-linear-gradient(#f3f3f3, #fcfcfc); background-image: -webkit-linear-gradient(#f3f3f3, #fcfcfc); background-image: linear-gradient(#f3f3f3, #fcfcfc); -moz-box-shadow: inset 0 -6px 20px rgba(0, 0, 0, 0.09); -webkit-box-shadow: inset 0 -6px 20px rgba(0, 0, 0, 0.09); box-shadow: inset 0 -6px 20px rgba(0, 0, 0, 0.09); -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+.header { position: relative; padding: 14px; text-align: center; z-index: 400; background: #fcfcfc; background-image: -moz-linear-gradient(#f3f3f3, #fcfcfc); background-image: -webkit-linear-gradient(#f3f3f3, #fcfcfc); background-image: linear-gradient(#f3f3f3, #fcfcfc); -moz-box-shadow: inset 0 -6px 20px rgba(0, 0, 0, 0.09); -webkit-box-shadow: inset 0 -6px 20px rgba(0, 0, 0, 0.09); box-shadow: inset 0 -6px 20px rgba(0, 0, 0, 0.09); -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 .header .header__logo { display: inline-block; background: url('../img/icons-sf814303044.png') 0 -715px no-repeat; width: 139px; height: 82px; }
 .header .header__text { margin-top: 33px; width: 465px; font-size: 2em; color: #828388; display: inline-block; font-family: "helveticaneue-bold", Arial, sans-serif; }
 .header .header__text.js-none { display: none; }
 
-.menu { border: 1px solid rgba(149, 149, 149, 0); background-color: white; -moz-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.09); -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.09); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.09); -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+.menu { position: absolute; left: 0; width: 100%; top: 100%; border: 1px solid rgba(149, 149, 149, 0); background-color: white; -moz-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.09); -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.09); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.09); -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 .menu .menu__in { margin: 0 auto; width: 982px; *zoom: 1; }
 .menu .menu__in:after { content: " "; display: table; clear: both; }
 .menu .menu__top { padding-top: 14px; height: 57px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; *zoom: 1; }
@@ -50,7 +49,7 @@ body { color: #646464; font-size: 14px; line-height: 1.4; font-family: "helvetic
 .menu .menu__list li:first-child { margin-left: 0; }
 .menu .menu__list a { padding: 4px 6px; font-size: 18px; color: #828388; text-decoration: none; -moz-transition: all 0.2s linear; -o-transition: all 0.2s linear; -webkit-transition: all 0.2s linear; transition: all 0.2s linear; }
 .menu .menu__list a:hover { color: white; background: #e83724; }
-.menu .menu__nav { height: 44px; line-height: 44px; font-size: 0; text-align: center; border-top: 1px solid #eaeaea; }
+.menu .menu__nav { height: 44px; line-height: 44px; font-size: 0; text-align: center; border-top: 1px solid #eaeaea; display: none; }
 .menu .menu__nav li { margin-left: 15px; display: inline-block; }
 .menu .menu__nav li:first-child { margin-left: 0; }
 .menu .menu__nav a { color: #67686c; font-size: 14px; text-decoration: none; }
@@ -148,7 +147,7 @@ body { color: #646464; font-size: 14px; line-height: 1.4; font-family: "helvetic
 .about a, .about .about__feedback { text-transform: uppercase; color: #2a2a2a; text-decoration: underline; background: none; display: inline-block; }
 .about a:hover, .about .about__feedback:hover { text-decoration: none; }
 
-.equipment { padding-top: 50px; }
+.equipment { padding-top: 110px; }
 .equipment .equipment__title { padding-left: 20px; font-size: 40px; color: #454545; font-family: "helveticaneue-bold", Arial, sans-serif; }
 .equipment .equipment__title-2, .equipment .equipment__title-3 { color: #ef4823; line-height: 1; }
 .equipment .equipment__title-2 { margin-bottom: 20px; font-size: 30px; }
