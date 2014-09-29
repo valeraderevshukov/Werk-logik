@@ -26,9 +26,9 @@ $(document).ready(function() {
 		calcHeader();
 		calcText();
 	});
-	$(".specialization__btn").click(function(){
+	$(".specialization__btn").mouseenter(function(){
 		var index = $(this).index();
-		$('.specialization__btn-top').eq(index).trigger('click');
+		$('.specialization__btn-top').eq(index).trigger('mouseenter');
 	});
 	$('.specialization__btn-top').on('click', function() {
 		var index = $(this).index();
