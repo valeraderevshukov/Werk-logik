@@ -54,6 +54,7 @@ body { color: #646464; font-size: 14px; line-height: 1.4; font-family: "helvetic
 .menu .menu__nav li:first-child { margin-left: 0; }
 .menu .menu__nav a { color: #67686c; font-size: 14px; text-decoration: none; }
 .menu .menu__nav a:hover { color: #e83724; }
+.menu .menu__nav.is-active { display: inline-block; }
 
 .ico { display: inline-block; }
 .ico.ico_car { background: url('../img/icons-sf814303044.png') 0 -86px no-repeat; width: 112px; height: 76px; }

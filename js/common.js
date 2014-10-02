@@ -36,7 +36,7 @@ $(document).ready(function() {
 		$(".specialization__btn").eq(index).addClass('cycle-pager-active');
 	});
 	$(".js-open-nav").click(function(){
-		$(".js-nav").slideToggle();
+		$(".js-nav").toggleClass('is-active');
 		return false;
 	});
 });
