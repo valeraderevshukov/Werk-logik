@@ -49,12 +49,13 @@ body { color: #646464; font-size: 14px; line-height: 1.4; font-family: "helvetic
 .menu .menu__list li:first-child { margin-left: 0; }
 .menu .menu__list a { padding: 4px 6px; font-size: 18px; color: #828388; text-decoration: none; -moz-transition: all 0.2s linear; -o-transition: all 0.2s linear; -webkit-transition: all 0.2s linear; transition: all 0.2s linear; }
 .menu .menu__list a:hover { color: white; background: #e83724; }
-.menu .menu__nav { height: 44px; line-height: 44px; font-size: 0; text-align: center; border-top: 1px solid #eaeaea; display: none; }
+.menu .menu__bottom { position: absolute; top: 100%; left: 0; width: 100%; height: 45px; background: white; text-align: center; -moz-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.09); -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.09); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.09); display: none; }
+.menu .menu__bottom.is-active { display: block; }
+.menu .menu__nav { height: 44px; line-height: 44px; font-size: 0; text-align: center; border-top: 1px solid #eaeaea; display: inline-block; }
 .menu .menu__nav li { margin-left: 15px; display: inline-block; }
 .menu .menu__nav li:first-child { margin-left: 0; }
 .menu .menu__nav a { color: #67686c; font-size: 14px; text-decoration: none; }
-.menu .menu__nav a:hover { color: #e83724; }
-.menu .menu__nav.is-active { display: inline-block; }
+.menu .menu__nav a:hover { color: #e83724; background: none; }
 
 .ico { display: inline-block; }
 .ico.ico_car { background: url('../img/icons-sf814303044.png') 0 -86px no-repeat; width: 112px; height: 76px; }
