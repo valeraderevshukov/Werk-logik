@@ -28,12 +28,18 @@ $(document).ready(function() {
 	});
 	$(".specialization__btn").mouseenter(function(){
 		var index = $(this).index();
-		$('.specialization__btn-top').eq(index).trigger('mouseenter');
+		$('.specialization').cycle('goto', index);
+		$('.specialization__btn-top').removeClass('cycle-pager-active'); 
+		$('.specialization__btn-top').eq(index).trigger('mouseenter').addClass('cycle-pager-active');
+
+		$(".specialization__btn").removeClass('cycle-slide-active');
+		$(".specialization__btn").eq(index).addClass('cycle-slide-active');
 	});
 	$('.specialization__btn-top').on('click', function() {
 		var index = $(this).index();
-		$(".specialization__btn").removeClass('cycle-pager-active');
-		$(".specialization__btn").eq(index).addClass('cycle-pager-active');
+		$('.specialization').cycle('goto', index);
+		$('.specialization__item').removeClass('cycle-slide-active');
+		$('.specialization__item').eq(index).addClass('cycle-slide-active');
 	});
 	$(".js-open-nav").click(function(){
 		$(".js-nav").toggleClass('is-active');

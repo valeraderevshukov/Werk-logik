@@ -9,6 +9,7 @@
 	<!--[if IE]><script src="js/html5shiv.js"></script><![endif]-->
 	<script src="js/lib/jquery.js"></script>
 	<script src="js/lib/cycle.js"></script>
+	<script src="js/lib/cycle.carousel.js"></script>
 	<script src="js/common.js"></script>
 </head>
 <body class="main">
@@ -61,10 +62,25 @@
 		data-cycle-timeout="3000"
 		data-cycle-slides=".specialization__item"
 		data-cycle-pause-on-hover="true"
-		data-cycle-pager=".specialization__pager"
-		data-cycle-pager-template="<div class='specialization__btn-top'></div>"
-		 data-cycle-pager-event="mouseover"
+		data-cycle-pager-template=".specialization__btn"
+		data-cycle-pager-event="mouseover"
+		
 		>
+		<div class="specialization__item">
+			<div class="specialization__img" style="background: url(img/img1.png) no-repeat 50% 0;">
+				<img src="http://placehold.it/1280x450" alt="img">
+			</div>
+		</div>
+		<div class="specialization__item">
+			<div class="specialization__img" style="background: url(img/img2.png) no-repeat 50% 0;">
+				<img src="http://placehold.it/1280x450" alt="img">
+			</div>
+		</div>
+		<div class="specialization__item">
+			<div class="specialization__img" style="background: url(img/img1.png) no-repeat 50% 0;">
+				<img src="http://placehold.it/1280x450" alt="img">
+			</div>
+		</div>
 		<div class="specialization__item">
 			<div class="specialization__img" style="background: url(img/img1.png) no-repeat 50% 0;">
 				<img src="http://placehold.it/1280x450" alt="img">
@@ -85,19 +101,60 @@
 			<div class="specialization__pager">
 			</div>
 		</div>
-		<div class="specialization__wrap specialization__pager">
+		<div class="specialization__wrap cycle-slideshow"
+			data-cycle-fx="carousel"
+    		data-cycle-carousel-visible="3"
+			data-cycle-timeout="0"
+			data-cycle-pager=".specialization__pager"
+			data-cycle-pager-template="<div class='specialization__btn-top'></div>"
+			data-cycle-slides=".specialization__block"
+			data-allow-wrap="false"
+			>
 			<div class="specialization__block specialization__btn">
-				<i class="ico ico_car"></i>
+				<div class="specialization__top" >
+					<div class="specialization__ico"><img src="img/icons/car.png" alt="img"></div>
+					<div class="specialization__ico-hov"><img src="img/icons/car-hov.png" alt="img"></div>
+				</div>
 				<h3 class="specialization__title">Доступ к авто</h3>
 				<div class="specialization__text">Все что нужно, чтобы все было под контролем </div>
 			</div>
 			<div class="specialization__block specialization__btn">
-				<i class="ico ico_eyes"></i>
+				<div class="specialization__top" >
+					<div class="specialization__ico"><img src="img/icons/eyes.png" alt="img"></div>
+					<div class="specialization__ico-hov"><img src="img/icons/eyes-hov.png" alt="img"></div>
+				</div>
 				<h3 class="specialization__title">Контроль помещений</h3>
 				<div class="specialization__text">Все что нужно, чтобы все было под контролем </div>
 			</div>
 			<div class="specialization__block specialization__btn">
-				<i class="ico ico_protection"></i>
+				<div class="specialization__top" >
+					<div class="specialization__ico"><img src="img/icons/protection.png" alt="img"></div>
+					<div class="specialization__ico-hov"><img src="img/icons/protection-hov.png" alt="img"></div>
+				</div>
+				<h3 class="specialization__title">Защита от протечек</h3>
+				<div class="specialization__text">Специальные условия для Дилееров и поставщиков</div>
+			</div>
+			<div class="specialization__block specialization__btn">
+				<div class="specialization__top" >
+					<div class="specialization__ico"><img src="img/icons/protection.png" alt="img"></div>
+					<div class="specialization__ico-hov"><img src="img/icons/protection-hov.png" alt="img"></div>
+				</div>
+				<h3 class="specialization__title">Защита от протечек</h3>
+				<div class="specialization__text">Специальные условия для Дилееров и поставщиков</div>
+			</div>
+			<div class="specialization__block specialization__btn">
+				<div class="specialization__top" >
+					<div class="specialization__ico"><img src="img/icons/protection.png" alt="img"></div>
+					<div class="specialization__ico-hov"><img src="img/icons/protection-hov.png" alt="img"></div>
+				</div>
+				<h3 class="specialization__title">Защита от протечек</h3>
+				<div class="specialization__text">Специальные условия для Дилееров и поставщиков</div>
+			</div>
+			<div class="specialization__block specialization__btn">
+				<div class="specialization__top" >
+					<div class="specialization__ico"><img src="img/icons/protection.png" alt="img"></div>
+					<div class="specialization__ico-hov"><img src="img/icons/protection-hov.png" alt="img"></div>
+				</div>
 				<h3 class="specialization__title">Защита от протечек</h3>
 				<div class="specialization__text">Специальные условия для Дилееров и поставщиков</div>
 			</div>
@@ -117,6 +174,7 @@
 				data-cycle-pause-on-hover="true"
 				data-cycle-pager=".slider__pager"
 				data-cycle-pager-template="<button></button>"
+
 				>
 				<div class="slider__item">
 					<div class="slider__img">
