@@ -50,7 +50,7 @@ $(document).ready(function() {
 	
 	$(".js-open-nav").click(function(){
 		$(".js-nav").toggleClass('is-active');
-		
+		return false;
 	});
 });
 
