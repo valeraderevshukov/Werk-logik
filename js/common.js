@@ -31,7 +31,6 @@ $(document).ready(function() {
 		$('.specialization').cycle('goto', index);
 		$('.specialization__btn-top').removeClass('cycle-pager-active'); 
 		$('.specialization__btn-top').eq(index).trigger('mouseenter').addClass('cycle-pager-active');
-
 		$(".specialization__btn").removeClass('cycle-slide-active');
 		$(".specialization__btn").eq(index).addClass('cycle-slide-active');
 	});
@@ -41,9 +40,17 @@ $(document).ready(function() {
 		$('.specialization__item').removeClass('cycle-slide-active');
 		$('.specialization__item').eq(index).addClass('cycle-slide-active');
 	});
+	$( ".specialization__wrap" ).mouseenter( function() { 
+	    $(".specialization").cycle('pause');
+	});
+
+	$( ".specialization__wrap" ).mouseleave( function() {
+	    $(".specialization").cycle('resume');
+	});
+	
 	$(".js-open-nav").click(function(){
 		$(".js-nav").toggleClass('is-active');
-		return false;
+		
 	});
 });
 
